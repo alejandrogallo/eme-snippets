@@ -1,6 +1,8 @@
 .PHONY: all
-all: snippets.json
+all: dist
 
-snippets.json: ./to-json.dhall
-%.json: %.dhall
-	dhall-to-json < $< > $@
+dist: snippets.json
+	./generate.py
+
+snippets.json: ./to-json.dhall snippets.dhall
+	dhall-to-json < ./to-json.dhall > $@
