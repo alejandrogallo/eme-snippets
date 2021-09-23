@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: Standard output
+# key: so
+# --
+
+std::cout << ${1} << "\n";
+
